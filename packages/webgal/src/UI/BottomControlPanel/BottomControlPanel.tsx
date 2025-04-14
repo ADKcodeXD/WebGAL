@@ -63,6 +63,7 @@ export const BottomControlPanel = () => {
       <div style={{ fontSize: '125%' }}>{t('noSaving')}</div>
     </div>
   );
+
   if (saveData[0]) {
     const data = saveData[0];
     fastSlPreview = (
@@ -93,13 +94,7 @@ export const BottomControlPanel = () => {
               }}
               onMouseEnter={playSeEnter}
             >
-              <PreviewCloseOne
-                className={styles.button}
-                theme="outline"
-                size={size}
-                fill="#f5f5f7"
-                strokeWidth={strokeWidth}
-              />
+              <PreviewCloseOne className={styles.button} theme="outline" size={size} strokeWidth={strokeWidth} />
               <span className={styles.button_text}>{t('buttons.hide')}</span>
             </span>
           )}
@@ -113,13 +108,7 @@ export const BottomControlPanel = () => {
               }}
               onMouseEnter={playSeEnter}
             >
-              <PreviewOpen
-                className={styles.button}
-                theme="outline"
-                size={size}
-                fill="#f5f5f7"
-                strokeWidth={strokeWidth}
-              />
+              <PreviewOpen className={styles.button} theme="outline" size={size} strokeWidth={strokeWidth} />
               <span className={styles.button_text}>{t('buttons.show')}</span>
             </span>
           )}
@@ -133,13 +122,7 @@ export const BottomControlPanel = () => {
             }}
             onMouseEnter={playSeEnter}
           >
-            <AlignTextLeftOne
-              className={styles.button}
-              theme="outline"
-              size={size}
-              fill="#f5f5f7"
-              strokeWidth={strokeWidth}
-            />
+            <AlignTextLeftOne className={styles.button} theme="outline" size={size} strokeWidth={strokeWidth} />
             <span className={styles.button_text}>{t('buttons.backlog')}</span>
           </span>
           <span
@@ -156,13 +139,7 @@ export const BottomControlPanel = () => {
             }}
             onMouseEnter={playSeEnter}
           >
-            <ReplayMusic
-              className={styles.button}
-              theme="outline"
-              size={size}
-              fill="#f5f5f7"
-              strokeWidth={strokeWidth}
-            />
+            <ReplayMusic className={styles.button} theme="outline" size={size} strokeWidth={strokeWidth} />
             <span className={styles.button_text}>{t('buttons.replay')}</span>
           </span>
           <span
@@ -175,7 +152,7 @@ export const BottomControlPanel = () => {
             }}
             onMouseEnter={playSeEnter}
           >
-            <PlayOne className={styles.button} theme="outline" size={size} fill="#f5f5f7" strokeWidth={strokeWidth} />
+            <PlayOne className={styles.button} theme="outline" size={size} strokeWidth={strokeWidth} />
             <span className={styles.button_text}>{t('buttons.auto')}</span>
           </span>
           <span
@@ -188,13 +165,7 @@ export const BottomControlPanel = () => {
             }}
             onMouseEnter={playSeEnter}
           >
-            <DoubleRight
-              className={styles.button}
-              theme="outline"
-              size={size}
-              fill="#f5f5f7"
-              strokeWidth={strokeWidth}
-            />
+            <DoubleRight className={styles.button} theme="outline" size={size} strokeWidth={strokeWidth} />
             <span className={styles.button_text}>{t('buttons.forward')}</span>
           </span>
           <span
@@ -206,13 +177,7 @@ export const BottomControlPanel = () => {
             }}
             onMouseEnter={playSeEnter}
           >
-            <DoubleDown
-              className={styles.button}
-              theme="outline"
-              size={size}
-              fill="#f5f5f7"
-              strokeWidth={strokeWidth}
-            />
+            <DoubleDown className={styles.button} theme="outline" size={size} strokeWidth={strokeWidth} />
             <span className={styles.button_text}>{t('buttons.quicklySave')}</span>
             <div className={styles.fastSlPreview + ' ' + styles.fastSPreview}>{fastSlPreview}</div>
           </span>
@@ -225,7 +190,7 @@ export const BottomControlPanel = () => {
             }}
             onMouseEnter={playSeEnter}
           >
-            <DoubleUp className={styles.button} theme="outline" size={size} fill="#f5f5f7" strokeWidth={strokeWidth} />
+            <DoubleUp className={styles.button} theme="outline" size={size} strokeWidth={strokeWidth} />
             <span className={styles.button_text}>{t('buttons.quicklyLoad')}</span>
             <div className={styles.fastSlPreview + ' ' + styles.fastLPreview}>{fastSlPreview}</div>
           </span>
@@ -239,7 +204,7 @@ export const BottomControlPanel = () => {
             }}
             onMouseEnter={playSeEnter}
           >
-            <Save className={styles.button} theme="outline" size={size} fill="#f5f5f7" strokeWidth={strokeWidth} />
+            <Save className={styles.button} theme="outline" size={size} strokeWidth={strokeWidth} />
             <span className={styles.button_text}>{t('buttons.save')}</span>
           </span>
           <span
@@ -252,13 +217,7 @@ export const BottomControlPanel = () => {
             }}
             onMouseEnter={playSeEnter}
           >
-            <FolderOpen
-              className={styles.button}
-              theme="outline"
-              size={size}
-              fill="#f5f5f7"
-              strokeWidth={strokeWidth}
-            />
+            <FolderOpen className={styles.button} theme="outline" size={size} strokeWidth={strokeWidth} />
             <span className={styles.button_text}>{t('buttons.load')}</span>
           </span>
           <span
@@ -271,13 +230,7 @@ export const BottomControlPanel = () => {
             }}
             onMouseEnter={playSeEnter}
           >
-            <SettingTwo
-              className={styles.button}
-              theme="outline"
-              size={size}
-              fill="#f5f5f7"
-              strokeWidth={strokeWidth}
-            />
+            <SettingTwo className={styles.button} theme="outline" size={size} strokeWidth={strokeWidth} />
             <span className={styles.button_text}>{t('buttons.options')}</span>
           </span>
           <span
@@ -297,7 +250,7 @@ export const BottomControlPanel = () => {
             }}
             onMouseEnter={playSeEnter}
           >
-            <Home className={styles.button} theme="outline" size={size} fill="#f5f5f7" strokeWidth={strokeWidth} />
+            <Home className={styles.button} theme="outline" size={size} strokeWidth={strokeWidth} />
             <span className={styles.button_text}>{t('buttons.title')}</span>
           </span>
           {isFullscreenSupport && (
@@ -338,9 +291,9 @@ export const BottomControlPanel = () => {
             onMouseEnter={playSeEnter}
           >
             {GUIStore.showControls ? (
-              <Lock className={styles.button} theme="outline" size={size} fill="#f5f5f7" strokeWidth={strokeWidth} />
+              <Lock className={styles.button} theme="outline" size={size} strokeWidth={strokeWidth} />
             ) : (
-              <Unlock className={styles.button} theme="outline" size={size} fill="#f5f5f7" strokeWidth={strokeWidth} />
+              <Unlock className={styles.button} theme="outline" size={size} strokeWidth={strokeWidth} />
             )}
           </span>
         </div>
