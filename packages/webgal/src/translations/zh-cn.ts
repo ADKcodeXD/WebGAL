@@ -179,6 +179,7 @@ const zhCn = {
       replay: '重播',
       auto: '自动',
       forward: '快进',
+      skip: '跳过',
       quicklySave: '快速存档',
       quicklyLoad: '快速读档',
       save: '存档',

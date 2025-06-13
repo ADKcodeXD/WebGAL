@@ -172,6 +172,7 @@ const en = {
       replay: 'Replay',
       auto: 'Auto',
       forward: 'Forward',
+      skip: 'Skip',
       quicklySave: 'Quickly Save',
       quicklyLoad: 'Quickly Load',
       save: 'Save',

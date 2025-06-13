@@ -4,17 +4,19 @@ import { webgalStore } from '@/store/store';
 import { resetStageState } from '@/store/stageReducer';
 import cloneDeep from 'lodash/cloneDeep';
 import { IBacklogItem } from '@/Core/Modules/backlog';
+import { ReadTextManager } from '@/Core/Modules/readTextManager';
 
 import { SYSTEM_CONFIG } from '@/config';
 import { WebGAL } from '@/Core/WebGAL';
 import { IRunPerform } from '@/store/stageInterface';
+import { isFast } from './fastSkip';
 
 /**
  * 进行下一句
  */
 export const nextSentence = () => {
   /**
-   * 发送 “发生点击下一句” 事件。
+   * 发送 "发生点击下一句" 事件。
    */
   WebGAL.events.userInteractNext.emit();
 
@@ -78,6 +80,24 @@ export const nextSentence = () => {
         WebGAL.gameplay.performController.performList.splice(i, 1);
         i--;
       }
+    }
+  }
+  const currentStageState = webgalStore.getState().stage;
+  if (currentStageState.showText) {
+    const currentScene = WebGAL.sceneManager.sceneData.currentScene;
+    const currentSentenceId = WebGAL.sceneManager.sceneData.currentSentenceId;
+
+    // 检查文本是否已读
+    const isRead = WebGAL.readTextManager.isTextRead({
+      sceneName: currentScene.sceneName,
+      sceneUrl: currentScene.sceneUrl,
+      sentenceId: currentSentenceId,
+      text: currentStageState.showText,
+    });
+
+    // 如果未读，则记录
+    if (!isRead) {
+      WebGAL.readTextManager.recordReadText(currentStageState.showText);
     }
   }
   if (isGoNext) {

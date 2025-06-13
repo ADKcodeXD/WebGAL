@@ -166,6 +166,7 @@ const de = {
       auto: 'Auto',
       forward: 'Überspringen',
       quicklySave: 'Quickly Save',
+      skip: 'Überspringen',
       quicklyLoad: 'Quickly Load',
       save: 'Speichern',
       load: 'Laden',

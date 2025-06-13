@@ -28,6 +28,7 @@ import {
   Save,
   SettingTwo,
   Unlock,
+  ToRight,
 } from '@icon-park/react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
@@ -177,6 +178,18 @@ export const BottomControlPanel = () => {
           >
             <PlayOne className={styles.button} theme="outline" size={size} fill="#f5f5f7" strokeWidth={strokeWidth} />
             <span className={styles.button_text}>{t('buttons.auto')}</span>
+          </span>
+          <span
+            className={styles.singleButton}
+            style={{ fontSize }}
+            onClick={() => {
+              // TODO: Implement skip logic
+              playSeClick();
+            }}
+            onMouseEnter={playSeEnter}
+          >
+            <ToRight className={styles.button} theme="outline" size={size} fill="#f5f5f7" strokeWidth={strokeWidth} />
+            <span className={styles.button_text}>{t('buttons.skip')}</span>
           </span>
           <span
             id="Button_ControlPanel_fast"

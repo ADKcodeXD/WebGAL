@@ -89,6 +89,18 @@ export interface IAppreciation {
 }
 
 /**
+ * 已读文本记录接口
+ * @interface IReadTextRecord
+ */
+export interface IReadTextRecord {
+  sceneName: string; // 场景名称
+  sceneUrl: string; // 场景URL
+  sentenceId: number; // 语句ID
+  text: string; // 文本内容
+  timestamp: number; // 阅读时间戳
+}
+
+/**
  * @interface IUserData 用户数据接口
  */
 export interface IUserData {
@@ -96,6 +108,7 @@ export interface IUserData {
   globalGameVar: IGameVar; // 不跟随存档的全局变量
   optionData: IOptionData; // 用户设置选项数据
   appreciationData: IAppreciation;
+  readTextRecords: IReadTextRecord[]; // 已读文本记录
 }
 
 export interface ISetUserDataPayload {

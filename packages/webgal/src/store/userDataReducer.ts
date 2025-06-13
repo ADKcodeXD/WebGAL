@@ -7,6 +7,7 @@ import { language } from '@/config/language';
 import {
   IAppreciationAsset,
   IOptionData,
+  IReadTextRecord,
   ISaveData,
   ISetOptionDataPayload,
   ISetUserDataPayload,
@@ -47,6 +48,7 @@ export const initState: IUserData = {
     bgm: [],
     cg: [],
   },
+  readTextRecords: [], // 初始化已读文本记录为空数组
 };
 
 const userDataSlice = createSlice({
@@ -141,6 +143,9 @@ const userDataSlice = createSlice({
     resetAllData(state) {
       Object.assign(state, cloneDeep(initState));
     },
+    setReadTextRecords: (state, action: PayloadAction<IReadTextRecord[]>) => {
+      state.readTextRecords = action.payload;
+    },
   },
 });
 
@@ -155,6 +160,7 @@ export const {
   unlockBgmInUserData,
   resetOptionSet,
   resetAllData,
+  setReadTextRecords,
 } = userDataSlice.actions;
 export default userDataSlice.reducer;
 

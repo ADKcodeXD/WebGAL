@@ -165,6 +165,7 @@ const fr = {
       replay: 'Rejouer',
       auto: 'Automatique',
       forward: 'Avancer',
+      skip: 'Passer',
       quicklySave: 'Sauvegarde rapide',
       quicklyLoad: 'Chargement rapide',
       save: 'Sauvegarder',
